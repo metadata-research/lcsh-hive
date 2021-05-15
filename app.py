@@ -1,5 +1,4 @@
 from flask import Flask, jsonify, render_template
-from flask_bootstrap import Bootstrap
 
 import requests
 
@@ -8,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'Welcome to the 1910 Library of Congress Subject Headings. Presented by HIVE'
+    return '<html>Welcome to the 1910 Library of Congress Subject Headings. Presented by HIVE2 start <a href = "/99152/b47p8tc5z">here</a> </html>'
 
 @app.route('/99152/<ark>')
 def get_term(ark):
