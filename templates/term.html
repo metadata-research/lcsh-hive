@@ -8,7 +8,7 @@
     <div class="card-body">
         <h4 class="card-title">{{data['preflabel']}}</h4>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><strong>URI:</strong> <a href="/99152/{{data['uri']}}">{{data['uri']}}</a></li>
+            <li class="list-group-item"><strong>Identifier:</strong> <a href="/ark:/99152/{{data['uri']}}">ark:/99152{{data['uri']}}</a></li>
             <li class="list-group-item"><strong>Alternate label:</strong> {{data['altlabel']}}</li>
             <li class="list-group-item"><strong>Notes:</strong>
                 {% if variable|length %}
@@ -31,7 +31,7 @@
                 {% endif %}
             <li class="list-group-item"><strong>Related:</strong></br>
                 {% for related in data['relateds'] %}
-                    <a href="/99152/{{related['uri']}}">{{related['label']}}</a></br>
+                    <a href="/ark:/99152/{{related['uri']}}">{{related['label']}}</a></br>
                 {% endfor %}
             </li>
         </ul>
