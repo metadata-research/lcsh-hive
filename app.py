@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return '<html>Welcome to the 1910 Library of Congress Subject Headings. Presented by HIVE2 start <a href = "/99152/b47p8tc5z">here</a> </html>'
+    return '<html>Welcome to the 1910 Library of Congress Subject Headings. Presented by HIVE2 start <a href = "/ark:/99152/b47p8tc5z">here</a> </html>'
 
 @app.route(r'/ark:/99152/<ark>')
 def get_term(ark):
