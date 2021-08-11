@@ -1,1 +1,8 @@
-__pycache__/app.cpython-38.pyc
+__pycache__/
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+lcshenv/
+env/
