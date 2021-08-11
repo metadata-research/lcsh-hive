@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card ">
+
+    <div class="card-header">
+        <img src="{{url_for('static', filename='meta_cci.png')}}"  alt="Metadata Research Center" width="400">
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">{{data['preflabel']}}</h4>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Identifier:</strong> <a href="/ark:/99152/{{data['uri']}}">ark:/99152/{{data['uri']}}</a></li>
+            <li class="list-group-item"><strong>Alternate label:</strong> {{data['altlabel']}}</li>
+            <li class="list-group-item"><strong>Notes:</strong>
+                {% if variable|length %}
+                    {{data['notes']}}</li>
+                {% else %}
+                    No notes
+                {% endif %}
+            <!-- <li class="list-group-item">{{data['topconcept']}}</li> -->
+            <li class="list-group-item"><strong>Broader:</strong>
+                {% if variable|length %}
+                    {{data['broaders']}}</li>
+                {% else %}
+                    No broader concepts
+                {% endif %}
+            <li class="list-group-item"><strong>Narrower:</strong>
+                {% if variable|length %}
+                    {{data['narrowers']}}</li>
+                {% else %}
+                    No narrower concepts
+                {% endif %}
+            <li class="list-group-item"><strong>Related:</strong></br>
+                {% for related in data['relateds'] %}
+                    <a href="/ark:/99152/{{related['uri']}}">{{related['label']}}</a></br>
+                {% endfor %}
+            </li>
+        </ul>
+        <a href="https://hive2.cci.drexel.edu/"><img border="0" src="{{url_for('static', filename='hive.png')}}"  alt="Helping Interdisciplinary Vocabulary Engineering" width="100"></a>
+    </div>
+    <div class="card-footer text-muted">
+      Library of Congress. Subject headings used in the dictionary catalogues of the Library of Congress</span>, 3 vols. Vols. 1-2. <br/>
+      Washington: G.P.O., Library Branch, 1910-1914. <br/>
+      <ul class="list-group">
+        <li class="list-group-item">Vol. 1 (A-F), <a href="https://hdl.handle.net/2027/coo.31924050327042">https://hdl.handle.net/2027/coo.31924050327042</a></li>
+        <li class="list-group-item">Vol. 2 (G-P), <a href="https://hdl.handle.net/2027/coo.31924050327059">https://hdl.handle.net/2027/coo.31924050327059</a></li>
+      </ul>
+   <br>
+      Library of Congress. Subject headings used in the dictionary catalogues of the Library of Congress</span>, 5 vols. Vols. 4-5.<br/>
+      Washington: G.P.O., Library Branch, 1910-1914.<br/>
+      <ul class="list-group"></ul>
+        <li class="list-group-item">Vol. 4 (Q-R), <a href=" https://hdl.handle.net/2027/mdp.39015014520715"> https://hdl.handle.net/2027/mdp.39015014520715</a></ul>
+        <li class="list-group-item">Vol. 5 (S-Z), <a href=" https://hdl.handle.net/2027/mdp.39015014520731"> https://hdl.handle.net/2027/mdp.39015014520731</a></ul>
+      </ul>
+    </div>    
+</div>
+{% endblock %}
