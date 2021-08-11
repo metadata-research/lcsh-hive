@@ -1,1 +1,3 @@
 lcshenv/
+__pycache__
+*.sock
