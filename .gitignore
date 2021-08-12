@@ -1,3 +1,4 @@
 lcshenv/
 __pycache__
 *.sock
+.vscode/settings.json
