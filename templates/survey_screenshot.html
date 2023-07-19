@@ -1,0 +1,24 @@
+{% extends "survey_base.html" %}
+{% block content %}
+<h1>Home</h1>
+<p> Welcome to the home page!</p>
+<div class="row">
+  <div class="col">
+    <h2>Screenshot</h2>
+  </div>
+  <div class="col">
+    <h2>Capture</h2>
+  </div>
+</div>
+{% for line in data %}
+<div class="row">
+  <div class="col">
+    {{ line.split('|')[0]|safe }}
+  </div>
+  <div class="col">
+    {{ line.split('|')[1]|safe}}
+  </div>
+</div>
+{% endfor %}
+
+{% endblock %}
